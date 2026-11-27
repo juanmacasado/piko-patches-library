@@ -36,3 +36,23 @@ of the Source Code and any Derivative Works.
 
 This project is licensed under the GNU General Public License v3.0 or later;
 the full text is in LICENSE.
+
+=============
+
+Modified version
+----------------
+
+This is a modified version of Piko Patches Library, maintained at
+https://github.com/juanmacasado/piko-patches-library (branch `mount`).
+It is not affiliated with or endorsed by the upstream authors.
+
+Modifications Copyright (C) 2026 juanmacasado, licensed under the same
+terms. Changes made on 2026-11-27:
+
+- Added app.morphe.extension.crimera.mount.MountComponents, which hosts
+  extension activities and receivers in non-exported stock components
+  so they work on mount (root) installs.
+- The downloader folder picker and notification receivers route their
+  intents through MountComponents.
+
+The full list of changes is in the git history of the fork.

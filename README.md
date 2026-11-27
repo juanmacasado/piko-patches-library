@@ -1,5 +1,11 @@
 # Piko Patches Library
 
+> [!NOTE]
+> **Unofficial fork** of [crimera/piko-patches-library](https://github.com/crimera/piko-patches-library),
+> used by [juanmacasado/piko](https://github.com/juanmacasado/piko) to support mount (root) installs.
+> The changes live on the `mount` branch and are listed in [NOTICE](NOTICE). Report problems with
+> them to this fork, not upstream.
+
 Shared patch-side infrastructure and resolver safeguards for [piko](https://github.com/crimera/piko) Morphe patch bundles.
 
 ## Modules
