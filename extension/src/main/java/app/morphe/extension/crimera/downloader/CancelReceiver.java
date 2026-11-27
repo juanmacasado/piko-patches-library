@@ -13,6 +13,8 @@ import android.os.Build;
 
 import androidx.annotation.Nullable;
 
+import app.morphe.extension.crimera.mount.MountComponents;
+
 import app.morphe.extension.crimera.downloader.engine.DownloadController;
 import app.morphe.extension.crimera.downloader.engine.DownloadControllers;
 import app.morphe.extension.crimera.downloader.engine.DownloadNotifications;
@@ -38,6 +40,7 @@ public final class CancelReceiver extends BroadcastReceiver {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 flags |= PendingIntent.FLAG_IMMUTABLE;
             }
+            intent = MountComponents.receiverIntent(context, intent);
             return PendingIntent.getBroadcast(context, notificationId, intent, flags);
         } catch (RuntimeException exception) {
             return null;

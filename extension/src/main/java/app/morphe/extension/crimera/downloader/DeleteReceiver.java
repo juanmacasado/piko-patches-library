@@ -15,6 +15,8 @@ import android.provider.DocumentsContract;
 
 import androidx.annotation.Nullable;
 
+import app.morphe.extension.crimera.mount.MountComponents;
+
 import java.io.FileNotFoundException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -49,6 +51,7 @@ public final class DeleteReceiver extends BroadcastReceiver {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 flags |= PendingIntent.FLAG_IMMUTABLE;
             }
+            intent = MountComponents.receiverIntent(context, intent);
             return PendingIntent.getBroadcast(context, notificationId, intent, flags);
         } catch (RuntimeException exception) {
             return null;

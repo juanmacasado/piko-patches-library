@@ -20,6 +20,7 @@ import java.util.List;
 import app.morphe.extension.crimera.downloader.RetryReceiver;
 import app.morphe.extension.crimera.downloader.model.ConflictPolicy;
 import app.morphe.extension.crimera.downloader.model.DownloadRequest;
+import app.morphe.extension.crimera.mount.MountComponents;
 
 /**
  * Encodes and decodes download requests into Intent extras for notification retry actions.
@@ -282,6 +283,7 @@ public final class RequestExtras {
             intent.setAction(RetryReceiver.ACTION_RETRY);
             writeToIntent(intent, notificationId, request);
             writeChannel(intent, channelId, channelName);
+            intent = MountComponents.receiverIntent(context, intent);
             int flags = PendingIntent.FLAG_UPDATE_CURRENT;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 flags |= PendingIntent.FLAG_IMMUTABLE;

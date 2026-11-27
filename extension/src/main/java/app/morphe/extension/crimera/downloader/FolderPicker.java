@@ -12,6 +12,8 @@ import android.net.Uri;
 
 import androidx.annotation.Nullable;
 
+import app.morphe.extension.crimera.mount.MountComponents;
+
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -50,6 +52,8 @@ public final class FolderPicker {
         if (!(context instanceof Activity)) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
+        // The picker needs a translucent host when it runs on a mount install.
+        intent = MountComponents.activityIntent(context, intent, true);
         try {
             context.startActivity(intent);
         } catch (RuntimeException exception) {
